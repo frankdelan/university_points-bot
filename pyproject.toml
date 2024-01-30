@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "unipoints_bot"
+version = "0.1.0"
+description = ""
+authors = ["frankdelan <frank.danil704@gmail.com>"]
+readme = "README.md"
+packages = [{include = "unipoints_bot"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiogram = "^2.23.1"
+fake-useragent = "^1.1.0"
+beautifulsoup4 = "^4.11.1"
+lxml = "^4.9.1"
+cachetools = "^5.3.1"
+asyncpg = "^0.28.0"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
