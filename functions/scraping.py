@@ -16,20 +16,20 @@ logging.basicConfig(
 logger = logging.getLogger('bot')
 
 
-async def check_website_changes() -> None:
-    prev_data: dict = {}
-    while True:
-        student_data: dict = {idx[0]: "" for idx in await get_students_id()}
-        for idx in student_data.keys():
-            points: str = await collect_data('7', idx)
-            student_data[idx] = points
-        if prev_data:
-            for idx1, idx2 in zip(student_data.keys(), prev_data.keys()):
-                if student_data[idx1] == prev_data[idx2]:
-                    await asyncio.sleep(3600)
-                else:
-                    await bot.send_message(idx1, student_data[idx1], parse_mode='html')
-        prev_data = student_data.copy()
+# async def check_website_changes() -> None:
+#     prev_data: dict = {}
+#     while True:
+#         student_data: dict = {idx[0]: "" for idx in await get_students_id()}
+#         for idx in student_data.keys():
+#             points: str = await collect_data('7', idx)
+#             student_data[idx] = points
+#         if prev_data:
+#             for idx1, idx2 in zip(student_data.keys(), prev_data.keys()):
+#                 if student_data[idx1] == prev_data[idx2]:
+#                     await asyncio.sleep(3600)
+#                 else:
+#                     await bot.send_message(idx1, student_data[idx1], parse_mode='html')
+#         prev_data = student_data.copy()
 
 
 def get_header_data() -> dict[str, str]:
